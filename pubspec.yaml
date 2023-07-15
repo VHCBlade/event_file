@@ -1,0 +1,19 @@
+name: event_file
+description: An event_bloc repository for File Management
+version: 0.1.0
+repository: https://github.com/VHCBlade/event_file
+
+environment:
+  sdk: ^3.0.2
+
+dependencies:
+  event_bloc: ^4.5.1
+
+  mime: ^1.0.4
+  path: ^1.8.3
+
+dev_dependencies:
+  lints: ^2.0.0
+  test: ^1.21.0
+
+  very_good_analysis: ^5.0.0
