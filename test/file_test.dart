@@ -20,5 +20,18 @@ void main() {
       expect(repo.loadFile('Amazing'), null);
       expect(repo.deleteFile('Cool'), false);
     });
+    test('Recursive', () {
+      resetFileDB();
+      final directory = Directory('test_db/amazing/incredible');
+      final repo = LocalFileRepository(directory);
+
+      expect(repo.loadFile('Amazing'), null);
+      expect(repo.saveFile('Amazing', Uint8List.fromList([20, 256, 40])), true);
+      expect(repo.loadFile('Amazing'), Uint8List.fromList([20, 256, 40]));
+      expect(repo.loadFile('Cool'), null);
+      expect(repo.deleteFile('Amazing'), true);
+      expect(repo.loadFile('Amazing'), null);
+      expect(repo.deleteFile('Cool'), false);
+    });
   });
 }

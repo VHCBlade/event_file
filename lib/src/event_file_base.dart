@@ -33,7 +33,7 @@ class LocalFileRepository extends FileRepository {
   /// directly into their id.
   LocalFileRepository(this.directory) {
     if (!directory.existsSync()) {
-      directory.createSync();
+      directory.createSync(recursive: true);
     }
   }
 
